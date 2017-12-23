@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Search Analytics</title>
+    <meta content="Search Analytics" name="search analytics">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://www.highcharts.com/media/com_demo/css/highslide.css" />  
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">  
+    <link href="css/styles.css" rel="stylesheet">	
+
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+		<body>
+<header class="header-container">
+<h1>Search Analytics</h1>	
+<h2>Analyse your performance on Google Search. Filter and compare your results to better understand your user's search patterns. <a href="#">Learn more.</a></h2>
+</header>
+<div class="checkbox-row">
+<form>
+  <div class="checkbox-container">
+    <label>
+  <input type="checkbox" class="regular-checkbox" name="clicks" value="Clicks" checked>Clicks
+  </label>
+  </div>
+  <div class="checkbox-container">  
+        <label>
+  <input type="checkbox" class="regular-checkbox" name="impressions" value="Impressions" checked>Impressions
+    </label>
+</div>
+  <div class="checkbox-container">
+        <label>
+  <input type="checkbox" class="regular-checkbox" name="ctr" value="CTR" checked>CTR
+    </label>
+</div>
+  <div class="checkbox-container">
+        <label>
+  <input type="checkbox" class="regular-checkbox" name="position" value="Position" checked>Position
+    </label>
+</div>
+</form>
+</div><!-- End of checkbox row -->		
+<div class="radio-row">
+<form>
+<div class="radio-container">
+  <input type="radio" class="radio" name="clicks" value="Clicks" checked><span class="radio-text">Queries</span>
+  <label class="select">
+  <select>
+  <option value="no filter">No filter</option>
+  </select>
+  </label>
+ </div>
+ <div class="radio-container">
+  <input type="radio" class="radio" name="impressions" value="Impressions"><span class="radio-text">Pages</span>
+    <label class="select">
+  <select>
+  <option value="no filter">No filter</option>
+  </select>  
+</label>
+</div>
+<div class="radio-container">
+  <input type="radio" class="radio" name="ctr" value="CTR"><span class="radio-text">Countries</span>
+      <label class="select">
+  <select>
+  <option value="no filter">No filter</option>
+  </select>  
+</label>
+</div>
+<div class="radio-container">	
+  <input type="radio" class="radio" name="position" value="Position"><span class="radio-text">Devices</span>
+      <label class="select">
+  <select>
+  <option value="no filter">No filter</option>
+  </select>  
+</label>
+</div>  
+<div class="radio-container">	
+  <input type="radio" class="radio" name="ctr" value="CTR"><span class="radio-text">Search Type</span>
+      <label class="select">
+  <select>
+  <option value="no filter">No filter</option>
+  <option value="web" selected>Web</option>  
+  </select>  
+</label>
+</div>    
+<div class="radio-container">	
+  <input type="radio" class="radio" name="position" value="Position"><span class="radio-text">Dates</span>
+      <label class="select">
+    <select>
+   <option value="no filter">No filter</option>   	
+  <option value="last 28 days" selected>Last 28 days</option>
+  </select> 
+  </label> 
+</div> 
+</form>
+</div><!-- End of radio row -->		
+<div class="legend-section">  
+  <div class="legend-row">
+    <div class="legend-center">
+<div class="legend-overall-container">
+<div class="legend-container legend1-container">
+<h3>Total clicks</h3>
+<span class="legend1">13,272</span>
+</div>
+</div>
+<div class="legend-overall-container">
+<div class="legend-container legend2-container">
+<h3>Total impressions</h3>
+<span class="legend2">318,675</span>
+</div>
+</div>
+<div class="legend-overall-container">
+<div class="legend-container legend3-container">
+  <h3>Avg. CTR</h3>
+<span class="legend3">4.16%</span>
+</div>
+</div>
+<div class="legend-overall-container right-container">
+<div class="legend-container legend4-container">
+  <h3>Avg. position</h3>
+<span class="legend4">18.1</span>
+</div>
+</div>
+</div>
+</div>
+</div><!-- End of legend row -->
+<div class="graph-container">
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+</div><!-- End of graph container -->
+<div class="table-container">
+<table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Queries</th>
+                <th>Clicks</th>
+                <th>Impressions</th>
+                <th>CTR</th>
+                <th>Position</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+		</body>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://www.highcharts.com/media/com_demo/js/highslide-full.min.js"></script>
+<script src="https://www.highcharts.com/media/com_demo/js/highslide.config.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="js/search-analysis-data.js"></script>
+</html>
